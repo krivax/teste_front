@@ -25,9 +25,9 @@ export default function Orders() {
     })
   }, [orders])
 
-  const onDelete = (id) => {
-    // manager.delete(id)
-  }
+  // const onDelete = (id) => {
+  //   // manager.delete(id)
+  // }
   // const onEdit = (id) => {
   //   const order = orders.find(order => order.id === id);
   //   manager.get(id)
