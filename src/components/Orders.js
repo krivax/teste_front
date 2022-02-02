@@ -28,10 +28,10 @@ export default function Orders() {
   const onDelete = (id) => {
     // manager.delete(id)
   }
-  const onEdit = (id) => {
-    const order = orders.find(order => order.id === id);
-    manager.get(id)
-  }
+  // const onEdit = (id) => {
+  //   const order = orders.find(order => order.id === id);
+  //   manager.get(id)
+  // }
 
   return (
     <TableContainer>
@@ -59,7 +59,7 @@ export default function Orders() {
                 <IconButton color="success" aria-label="upload picture" component="span">
                   <EditIcon />
                 </IconButton>
-                <IconButton color="error" aria-label="upload picture" component="span" onClick={onDelete(order.id)}>
+                <IconButton color="error" aria-label="upload picture" component="span">
                   <DeleteForeverIcon />
                 </IconButton>
               </TableCell>
