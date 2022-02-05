@@ -6,7 +6,6 @@ class Manager {
   }
   async getAll(){
     const response = await Api.get('/indexadores');
-    console.log('aqui tem os indexadores', response);
     const data = response.data;
     return data.data;
   }
@@ -23,6 +22,13 @@ class Manager {
   }
   delete(id){
     return Api.delete(`/indexadores/${id}`)
+  }
+
+  async getAllList(){
+    const response = await Api.get('/planocontas');
+    const data = response.data;
+    console.log('aqui data filtrado', data.data)
+    return data;
   }
 };
 

@@ -19,8 +19,9 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import { mainListItems } from '../components/ListItems';
 import Chart from '../components/Chart';
 import Deposits from '../components/Deposits';
-import Orders from '../components/Orders';
-import AddItem from '../components/AddItem';
+// import Orders from '../components/Orders';
+// import AddItem from '../components/AddItem';
+import PlanoContas from '../components/PlanoContas';
 
 const drawerWidth = 240;
 
@@ -171,14 +172,15 @@ function DashboardContent() {
                   <Deposits />
                 </Paper>
               </Grid>
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
                   <AddItem />
                 </Paper>
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Orders />
+                  {/* <Orders /> */}
+                  <PlanoContas />
                 </Paper>
               </Grid>
             </Grid>
