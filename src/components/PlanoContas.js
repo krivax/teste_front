@@ -26,6 +26,7 @@ const PlanoContas = () => {
 
   return (
     <>
+    <h1>Plano de Contas</h1>
       {
         values.map((value) => (
           <TreeView TreeView
