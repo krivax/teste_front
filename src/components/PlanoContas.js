@@ -16,7 +16,8 @@ const PlanoContas = () => {
 
 
   const renderTree = (nodes) => (
-    <TreeItem key={nodes.id} nodeId={nodes.identificacao} label={[nodes.id, ' - ', nodes.identificacao]}>
+    <TreeItem key={nodes.id} nodeId={nodes.identificacao} label={[
+      nodes.id.toString().split('').join('.'), ' - ', nodes.identificacao]}>
       {Array.isArray(nodes.parentPlanoConta)
         ? nodes.parentPlanoConta.map((node) => renderTree(node))
         : null}
@@ -24,15 +25,22 @@ const PlanoContas = () => {
   );
 
   return (
-    <TreeView
-      aria-label="rich object"
-      defaultCollapseIcon={<ExpandMoreIcon />}
-      defaultExpanded={['[0]']}
-      defaultExpandIcon={<ChevronRightIcon />}
-      sx={{ height: 'auto', flexGrow: 1, maxWidth: '400' }}
-    >
-      {values.map((value) => renderTree(value))}
-    </TreeView>
+    <>
+      {
+        values.map((value) => (
+          <TreeView TreeView
+            aria-label="rich object"
+            defaultCollapseIcon={<ExpandMoreIcon />}
+            defaultExpanded={[value.identificacao]}
+            defaultExpandIcon={<ChevronRightIcon />}
+            sx={{ height: 'auto', flexGrow: 1, maxWidth: '400' }}
+          >
+            {renderTree(value)}
+          </TreeView>
+        )
+        )
+      }
+    </>
   );
 }
 
